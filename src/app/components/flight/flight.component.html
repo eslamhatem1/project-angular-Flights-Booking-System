@@ -1,0 +1,55 @@
+
+
+
+<div class="container-fluid main-section ">
+  <section class='main-header'>
+    <div class='header-border'></div>
+
+    <nav class="sub-container">
+      <a class="sub-nav" href="">View My Options</a>
+    </nav>
+  </section>
+
+  <section class="wrapper">
+    <section class="new-flight">
+      <h3 class="section-title">flight details</h3>
+      <div class="new-flight-info">
+        <i class="plane-icon ion-plane"></i>
+        <div class="text">
+          <div class="route">{{flight.from}} to {{flight.to}}</div>
+          <div class="number">Flight No. 5J959</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="departure-flight">
+      <h4 class="departure-title">Departure Flight</h4>
+      <div class="departure-info">
+        <span class="title">Leaves</span>
+        <p class="date">{{flight.Departing | date:'fullDate'}}</p>
+        <p class="daytime"> ({{flight.timeDeparting }})</p>
+        <span class="location">Ninoy Aquino International Airport Terminal 3</span>
+      </div>
+
+      <div class="departure-info">
+        <span class="title">Arrives</span>
+        <p class="date">{{flight.Arriving | date:'fullDate'}}</p>
+        <p class="daytime"> ({{flight.timeArriving }})</p>
+        <span class="location">Francisco Bangoy International Airport</span>
+      </div>
+      <div class="departure-info">
+        <span class="departure-title">price</span>
+        <p class="date">{{flight.price | currency}}</p>
+      </div>
+
+      <div class="departure-info">
+        <span class="departure-title">class</span>
+        <p class="date">{{flight.flight_class }}</p>
+      </div>
+
+
+
+      <button class="btn btn-primary btn-block" [routerLink]="['/book',flight.id]" > Book Now  </button>
+    </section>
+  </section>
+</div>

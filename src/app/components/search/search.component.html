@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="text-center m-5" style="margin: 0 auto;">
+<h1>
+  search results .....
+</h1>
+  </div>
+  <section class="app-main">
+    <div *ngIf="afterRefill.length >0" class="app-main-left cards-area">
+      <div
+        class="card-wrapper main-card col-12 col-md-4"
+        *ngFor="let flight of afterRefill"
+      >
+        <a class="card">
+          <div class="card-image-wrapper">
+            <img [src]="flight.img" alt="Hotel" />
+          </div>
+          <div class="card-info">
+            <div class="card-text big cardText-js">
+              from {{ flight.from }} - to - {{ flight.to }}
+            </div>
+            <!-- <div class="card-text small">Stockton Street</div> -->
+            <div class="card-text small">
+              Starts from:
+              <span class="card-price"> {{ flight.price | currency }}</span>
+            </div>
+            <button class="btn btn-primary  btn-block mt-2"  [routerLink]="['/flight',flight.id]"> more details</button>
+            <button class="btn btn-secondary btn-block mt-2" [routerLink]="['/book',flight.id]"> Book Now </button>
+
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <h1 *ngIf="afterRefill.length <1">no Data Found Search by Correct Key</h1>
+  </section>
+</div>

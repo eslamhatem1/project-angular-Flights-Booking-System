@@ -1,0 +1,124 @@
+<div class="main">
+  <div class="inner-main text-center">
+    <h1 style="color: white"><strong>Travel!</strong></h1>
+    <h1 style="color: white" class="mb-5"><strong>Explore! Live!</strong></h1>
+
+    <div class="container-fluid">
+      <form class="form-inline" [formGroup]="searchForm">
+        <div class="col-12 col-md-3">
+          <div class="input-group">
+
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <img
+                  style="width: 23px"
+                  src="../../../assets/images/icons/departures.png"
+                />
+              </div>
+            </div>
+            <select
+              class="custom-select"
+              id="leaving-input"
+              formControlName="leaving_Place"
+            >
+              <option selected value="">leaving from...</option>
+              <option value="cairo">cairo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="input-group">
+
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <img
+                  style="width: 23px"
+                  src="../../../assets/images/icons/landing.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+            </div>
+
+            <select
+              class="custom-select"
+              id="arriving-input"
+              formControlName="going_Place"
+            >
+              <option selected value="">going to....</option>
+              <option value="Dubai">Dubai</option>
+              <option value="Dammam">Dammam</option>
+              <option value="England">England</option>
+              <option value="SharmElsheikh">SharmElsheikh</option>
+              <option value="Germany">Germany</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="input-group">
+
+            <div class="input-group-prepend">
+              <button
+                class="btn btn-secondary calendar"
+                (click)="d.toggle()"
+                type="button"
+              >
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              [(ngModel)]="model"
+              ngbDatepicker
+              #d="ngbDatepicker"
+              formControlName="departing_date"
+              id="Departing"
+            />
+
+
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <button class="btn btn-golden btn-block" (click)="OnSearch()">
+            SEARCH
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="app-main">
+    <div class="app-main-left cards-area">
+      <div
+        class="card-wrapper main-card col-12 col-md-4"
+        *ngFor="let flight of refillFlights"
+      >
+        <a class="card">
+          <div class="card-image-wrapper">
+            <img [src]="flight.img" alt="Hotel" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <div class="card-text big cardText-js">
+              from {{ flight.from }} - to - {{ flight.to }}
+            </div>
+            <!-- <div class="card-text small">Stockton Street</div> -->
+            <div class="card-text small">
+              Starts from:
+              <span class="card-price"> {{ flight.price | currency }}</span>
+            </div>
+            <button class="btn btn-primary  btn-block mt-2"  [routerLink]="['/flight',flight.id]"> more details</button>
+            <button class="btn btn-secondary btn-block mt-2" [routerLink]="['/book',flight.id]"> Book Now </button>
+
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

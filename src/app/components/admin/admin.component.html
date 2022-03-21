@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="d-flex justify-content-center mb-2">
+    <h4 class="m-5">
+      our clients
+    </h4>
+
+  </div>
+  <table class="table table-striped table-bordered" *ngIf="clients" >
+    <thead>
+      <tr class="table-head">
+        <th scope="col">No</th>
+        <th scope="col">client name </th>
+        <th scope="col">client phone </th>
+        <th scope="col">client email </th>
+
+        <th scope="col">flight details</th>
+        <th scope="col">Departing</th>
+        <th scope="col">Arriving</th>
+        <th scope="col">time Departing</th>
+        <th scope="col">flight class</th>
+
+      </tr>
+    </thead>
+    <tbody>
+  
+      <!-- ; [ngbTooltip]="user.name" -->
+      <tr   *ngFor="let client of clients ;index as i " >
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ client?.bookingDetails.fullName }}</td>
+        <td>{{ client?.bookingDetails.phone }}</td>
+        <td>{{ client?.bookingDetails.email }}</td>
+        <td>{{ client?.from }} - {{ client?.to }} </td>
+        <td>{{ client?.Departing }}</td>
+        <td>{{ client?.Arriving }}</td>
+        <td>{{ client?.timeDeparting }} - {{ client?.timeArriving }} </td>
+        <td>{{ client?.flight_class }}</td>
+     
+      </tr>
+  
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center mb-5" *ngIf="!clients" >
+
+    <h1 class="text-center" >
+        no data found 
+      </h1>
+
+  </div>
+
+</div>
