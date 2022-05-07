@@ -5,41 +5,41 @@
 <main class="pt-5">
 
   <header>
-    <h1>Boarding pass <sub>  {{flight.type}} ticket </sub></h1>
+    <h1>Boarding pass <sub>  {{theflight.typeTicket}} ticket </sub></h1>
 
   </header>
 
   <section class="flight--general">
     <div>
 
-      <h2>{{flight.from}}</h2>
+      <h2>Cairo</h2>
     </div>
     <div>
       <h4>to</h4>
     </div>
     <div>
 
-      <h2>{{flight.to}}</h2>
+      <h2>{{theflight.destination}}</h2>
     </div>
   </section>
   <section class="flight--TimeInfo">
     <div>
       <h5>Boarding</h5>
-      <p>{{flight.timeDeparting}}</p>
+      <p>{{theflight.timeDeparture}}</p>
     </div>
     <div>
       <h5>arriving</h5>
-      <p>{{flight.timeArriving}}</p>
+      <p>{{theflight.timeLand}}</p>
     </div>
     <div>
       <h5>Date</h5>
-      <p>{{flight.Departing | date:'longDate'}}</p>
+      <p>{{theflight.dateFlight | date:'longDate'}}</p>
     </div>
   </section>
   <section class="flight--PassInfo">
     <div>
-      <h5>Passenger</h5>
-      <p>{{personInfo.fullName}}</p>
+      <h5>ticket Nubmer</h5>
+      <p>{{theflight.ticketNum}}</p>
     </div>
     <div>
       <h5>Seat</h5>
@@ -47,7 +47,7 @@
     </div>
     <div>
       <h5>class</h5>
-      <p>{{flight.flight_class}}</p>
+      <p>{{theflight.typeTicket}}</p>
     </div>
   </section>
   <section class="flight--qrcode"><img src="http://cdnqrcgde.s3-eu-west-1.amazonaws.com/wp-content/uploads/2013/11/jpeg.jpg"></section>

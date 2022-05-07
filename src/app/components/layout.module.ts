@@ -14,11 +14,12 @@ import { FlightComponent } from './flight/flight.component';
 import { SearchComponent } from './search/search.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { AdminComponent } from './admin/admin.component';
-import { BookingComponent } from './booking/booking.component'; // <-- import the module
+import { BookingComponent } from './booking/booking.component';
+import { MobilnDirective } from './mobiln.directive';
 
 
 @NgModule({
-  declarations: [HomeComponent,PageNotFoundComponent,LoginComponent, FlightComponent, SearchComponent, TicketComponent, AdminComponent, BookingComponent],
+  declarations: [HomeComponent,PageNotFoundComponent,LoginComponent, FlightComponent, SearchComponent, TicketComponent, AdminComponent, BookingComponent, MobilnDirective],
   imports: [
     CommonModule,
     LayoutRoutingModule,

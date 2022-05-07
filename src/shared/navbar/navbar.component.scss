@@ -41,12 +41,12 @@
 // }
 
 
-// .margin-right-logo{
-//   margin-right: 50%;
-// }
-// .margin-left-logo{
-//   margin-left: 50%;
-// }
+.margin-right-logo{
+  margin-right: 50%;
+}
+.margin-left-logo{
+  margin-left: 50%;
+}
 
 
 
@@ -109,5 +109,22 @@ ul{
     border: 5px solid #FEC524;
 
 
+
+}
+
+.carousel-caption .header{
+
+
+  align-items: center;
+
+  box-sizing: border-box;
+  position: relative;
+  color: #fff;
+  padding: 24px;
+  width: 439px;
+  height: 240px;
+  top: 130px;
+  left: 120px;
+  border-radius: 12px;
 
 }

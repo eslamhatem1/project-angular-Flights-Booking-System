@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, PatternValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MainapiService } from 'src/app/services/mainapi.service';
+import { ResevationService } from 'src/app/services/resevation.service';
+import { mainapi } from 'src/shared/models/main';
 import { HomeService } from '../../../shared/services/home/home.service';
 
 @Component({
@@ -15,29 +18,63 @@ export class BookingComponent implements OnInit {
   bookingDetails: {} = {};
   bookingList = [];
 
+  theflight=new mainapi();
   constructor(
-    private _activedRoute: ActivatedRoute,
+    private active:ActivatedRoute,
     private fb: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private HomeService: HomeService
+    private HomeService: HomeService,
+    private servses:ResevationService,
+    private servise:MainapiService
   ) {}
 
-  public bookingForm = this.fb.group({
+
+
+  bookingForm = this.fb.group({
     fullName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.required]],
-    street: ['', [Validators.required]],
-    blockNum: ['', [Validators.required]],
-    city: ['', [Validators.required]],
-    zipCode: ['', [Validators.required]],
-    country: ['', [Validators.required]],
-  });
+    ticketNum:[''],
+
+      gender: ['', [Validators.required]],
+
+      passportNumber: ['', [Validators.required]],
+      county: ['', [Validators.required]],
+      birthDate:['',[Validators.required]],
+      issuingDate:['',[Validators.required]],
+      expirtyDate:['',[Validators.required]],
+
+    });
 
   ngOnInit(): void {
-    this.id = this._activedRoute.snapshot.params['id'];
+    this.id = this.active.snapshot.params['id'];
     this.getflight();
+
+
+    this.active.paramMap.subscribe(param=>
+
+      {
+
+        let id=Number(param.get('id'));
+        this.servise.getid(id).subscribe(
+          (Response:any)=>{
+            this.theflight=Response
+
+             this.bookingForm.patchValue({
+              ticketNum:this.theflight.ticketNum
+            })
+          }
+        )
+      })
+
+
   }
+
+
+
+
+    ishidden=false;
 
   get f() {
     return this.bookingForm.controls;
@@ -109,5 +146,24 @@ export class BookingComponent implements OnInit {
       'bookinginfoWithPerson',
       JSON.stringify(this.bookingDetails)
     );
+  }
+
+
+  send(){
+
+
+    console.log(this.bookingForm.value,this.bookingForm.value.ticketnumer)
+   this.servses.post(this.bookingForm.value).subscribe(
+
+
+    (Response:any)=>{
+
+      alert('done')
+
+
+      this.bookingForm.reset();
+      this.router.navigate(['/ticket',this.theflight.ticketId])
+    }
+   )
   }
 }

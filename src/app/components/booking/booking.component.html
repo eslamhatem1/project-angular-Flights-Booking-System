@@ -1,149 +1,219 @@
-<div>
-
-
-
-<form [formGroup]="bookingForm" >
+<form [formGroup]="bookingForm">
   <!--  General -->
   <div class="form-group">
     <h2 class="heading">Booking & contact</h2>
     <div class="controls">
-      <input type="text"  placeholder="Full Name" formControlName="fullName" >
+      <input type="text" Mobilnumber placeholder="Full Name" formControlName="fullName">
       <small class=" text-danger" *ngIf="f.fullName.touched && f.fullName.invalid">
         this feild is required
-    </small>
+      </small>
     </div>
     <div class="controls">
 
       <input type="text" placeholder="example@email.com" formControlName="email">
       <small class=" text-danger" *ngIf="f.email.touched && f.email.invalid">
         this feild is required
-    </small>
-        <small class=" text-danger" *ngIf="f.email.errors?.email">
+      </small>
+      <small class=" text-danger" *ngIf="f.email.errors?.email">
         You Must Enter like this Example@mail.com!</small>
     </div>
     <div class="controls">
-      <input type="tel" id="phone" class="floatLabel" name="phone" placeholder="phone" formControlName="phone">
+      <input type="tel" appMobiln id="phone" class="floatLabel" name="phone" placeholder="phone"
+        formControlName="phone">
       <small class=" text-danger" *ngIf="f.phone.touched && f.phone.invalid">
-        this feild is required
-    </small>
-    </div>
-      <div class="grid">
-        <div class="col-2-3">
-          <div class="controls">
-           <input type="text" id="street" class="floatLabel" name="street" placeholder="street" formControlName="street">
-           <small class=" text-danger" *ngIf="f.street.touched && f.street.invalid">
-            this feild is required
-        </small>
-          </div>
-        </div>
-        <div class="col-1-3">
-          <div class="controls">
-            <input type="number" id="street-number" class="floatLabel" name="street-number" placeholder="block number" formControlName="blockNum">
-            <small class=" text-danger" *ngIf="f.blockNum.touched && f.blockNum.invalid">
-              this feild is required
-          </small>
-
-          </div>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="col-2-3">
-          <div class="controls">
-            <input type="text" id="city" class="floatLabel" name="city" placeholder="City" formControlName="city">
-            <small class=" text-danger" *ngIf="f.city.touched && f.city.invalid">
-              this feild is required
-          </small>
-
-          </div>
-        </div>
-        <div class="col-1-3">
-          <div class="controls">
-            <input type="text" id="post-code" class="floatLabel" placeholder="post-code" formControlName="zipCode">
-            <small class=" text-danger" *ngIf="f.zipCode.touched && f.zipCode.invalid">
-              this feild is required
-          </small>
-
-          </div>
-        </div>
-      </div>
-      <div class="controls">
-        <input type="text" id="country" class="floatLabel" placeholder="country" formControlName="country">
-        <small class=" text-danger" *ngIf="f.country.touched && f.country.invalid">
-          this feild is required
+        the filed is required
       </small>
+    </div>
+
+    <div class="controls">
+      <input type="text" readonly formControlName="ticketNum">
+
+    </div>
+
+
+    <div class="controls">
+      <input type="text" placeholder="Passport Number" formControlName="passportNumber">
+      <small class=" text-danger" *ngIf="f.passportNumber.touched && f.passportNumber.invalid">
+        this Passport Number is required
+      </small>
+    </div>
+    <div class="grid">
+      <div class="col-2-3">
+        <div class="controls">
+          Issuing Passport Date :
+          <input type="date" min="2022-05-01" max="2022-12-31" id="Issuing_passport_Date" class="floatLabel"
+            name="Issuing Date" placeholder="Issuing Passport Date" formControlName="issuingDate">
+          <small class=" text-danger" *ngIf="f.issuingDate.touched && f.issuingDate.invalid">
+            this Issuing Date is required
+          </small>
+        </div>
       </div>
+      <div class="col-1-3">
+        <div class="controls">
+          Birth of date :
+          <input type="date" min="2022-05-01" max="2022-12-31" id="date-number" class="floatLabel" name="date-number"
+            placeholder="Birth of date" formControlName="birthDate">
+          <small class=" text-danger" *ngIf="f.birthDate.touched && f.birthDate.invalid">
+            this feild is required
+          </small>
+
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-2-3">
+        <div class="controls">
+          Expired Passport date :
+          <input type="date" min="2022-05-01" max="2022-12-31" id="Expired_passport_date" class="floatLabel"
+            name="Expired_passport_date" placeholder="Expired Passport date" formControlName="expirtyDate">
+          <small class=" text-danger" *ngIf="f.expirtyDate.touched && f.expirtyDate.invalid">
+            this feild is required
+          </small>
+
+        </div>
+      </div>
+      <div class="col-1-3">
+        Gender :
+        <div class="custom-select">
+          <select type="select" id="gender" class="floatLabel" placeholder="gender" formControlName="gender">
+            <option selected value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="select">
+      Country :
+      <select formControlName="county" id="country" name="country" class="form-control">
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Åland Islands">Åland Islands</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="American Samoa">American Samoa</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Anguilla">Anguilla</option>
+        <option value="Antarctica">Antarctica</option>
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Aruba">Aruba</option>
+
+        <option value="Sierra Leone">Sierra Leone</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Slovakia">Slovakia</option>
+        <option value="Slovenia">Slovenia</option>
+        <option value="Solomon Islands">Solomon Islands</option>
+        <option value="Somalia">Somalia</option>
+        <option value="South Africa">South Africa</option>
+        <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands
+        </option>
+        <option value="Spain">Spain</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+        <option value="Sudan">Sudan</option>
+        <option value="Suriname">Suriname</option>
+        <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+        <option value="Swaziland">Swaziland</option>
+        <option value="Sweden">Sweden</option>
+        <option value="Switzerland">Switzerland</option>
+        <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+        <option value="Taiwan">Taiwan</option>
+        <option value="Tajikistan">Tajikistan</option>
+        <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Timor-leste">Timor-leste</option>
+
+
+      </select>
+    </div>
   </div>
   <!--  Details -->
   <div class="form-group">
     <h2 class="heading">Details</h2>
     <div class="grid">
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-        <p >{{flight.from}} to {{flight.to}}</p>
-        <p >Flight No. 5J959</p>
-      </div>
-    </div>
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-
-
-          <span >Leaves</span>
-          <p >{{flight.Departing }}</p>
-          <p > ({{flight.timeDeparting }})</p>
-          <span >Ninoy Aquino International Airport Terminal 3</span>
-
-
-
-      </div>
-    </div>
-
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-
-
-        <span >Arrives</span>
-        <p >{{flight.Arriving }}</p>
-        <p > ({{flight.timeArriving }})</p>
-        <span >Francisco Bangoy International Airport</span>
-
-
-
-      </div>
-    </div>
-
-
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-
-
-        <span >price</span>
-        <p >{{flight.price | currency}}</p>
-
-        <span >class</span>
-        <p >{{flight.flight_class }}</p>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-      </div>
-
-      <div class="grid">
-        <hr>
-        <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
-        <br>
+      <div class="col-1-4 col-1-4-sm">
         <div class="controls">
-          <textarea name="comments" class="floatLabel" id="comments"></textarea>
-          </div>
-            <button  class="btn btn-primary btn-block" (click)="bookTicket(flight)" [disabled]="!bookingForm.valid">Submit</button>
+          <p>{{flight.from}} to {{flight.to}}</p>
+          <p>{{theflight.ticketNum}}</p>
+        </div>
       </div>
-  </div> <!-- /.form-group -->
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+
+
+          <span>Leaves</span>
+          <p>{{theflight.typeTicket}}</p>
+          <p>{{theflight.timeLand}}</p>
+
+          <span>{{theflight.airPort}} <br> Terminal {{theflight.terminal}}</span>
+
+
+
+        </div>
+      </div>
+
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+
+
+          <span>Arrives</span>
+          <p>{{theflight.dateAvailable}}</p>
+          <p> ({{theflight.timeLand}})</p>
+          <span>Dubai Airport</span>
+
+
+
+
+        </div>
+      </div>
+
+
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+
+
+          <span>price</span>
+          <p>{{theflight.priceTicket | currency}}</p>
+
+          <span>class</span>
+          <p>{{theflight.typeTicket}}</p>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="grid">
+      <hr>
+      <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
+      <br>
+
+
+
+      <div class="controls">
+        <textarea name="comments" class="floatLabel" id="comments"></textarea>
+      </div>
+      <button (click)="send()" [disabled]="bookingForm.invalid" class="btn btn-primary btn-block">Submit</button>
+    </div>
+  </div>
+  <!-- /.form-group -->
 </form>
+<div class="text-info">
+
+
 
 </div>

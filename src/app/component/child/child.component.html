@@ -1,0 +1,33 @@
+<!-- <div>//*ngIf="flight.isshow==true" -->
+
+<div class="container d-flex">
+  <section class="app-main ">
+    <div class="app-main-left cards-area">
+      <ng-container *ngFor="let flight of refillFlights">
+        <div class="card-wrapper main-card col-12 col-md-4" *ngIf="flight.isshow==true">
+          <a class="card">
+            <div class="card-image-wrapper">
+              <img src="{{img}}" alt="Hotel" loading="lazy" />
+            </div>
+            <div class="card-info">
+              <div class="card-text big cardText-js">
+                date Flight: {{ flight.dateFlight | date:'dd-MM-YYYY' }} <br>
+
+                time:{{flight.timeDeparture}}
+              </div>
+              <!-- <div class="card-text small">Stockton Street</div> -->
+              <div class="card-text small">
+                price Ticket:
+                <span class="card-price"> {{ flight.priceTicket | currency }}</span>
+              </div>
+              <a class="btn btn-primary  btn-block mt-2" [routerLink]="['/flight',flight.ticketId]"> more details</a>
+              <!-- <button class="btn btn-secondary btn-block mt-2" [routerLink]="['/book',flight.id]"> Book Now </button> -->
+              <a class="btn btn-secondary btn-block mt-2" [routerLink]="['/book',flight.ticketId]"> Book Now </a>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+
+    </div>
+  </section>
+</div>

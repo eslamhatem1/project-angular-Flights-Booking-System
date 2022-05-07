@@ -114,7 +114,7 @@ export class HomeService {
       Arriving:new Date( "2022-03-30 "),
       Departing: new Date( "2022-03-30 "),
       from: 'Cairo',
-      img: '../../../assets/images/06.jpg',
+      img: '../../../assets/images/01.jpg',
       price: 8000,
       to: ' south africa',
       timeArriving:'15:00 pm',

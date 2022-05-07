@@ -109,12 +109,9 @@
               from {{ flight.from }} - to - {{ flight.to }}
             </div>
             <!-- <div class="card-text small">Stockton Street</div> -->
-            <div class="card-text small">
-              Starts from:
-              <span class="card-price"> {{ flight.price | currency }}</span>
-            </div>
-            <button class="btn btn-primary  btn-block mt-2"  [routerLink]="['/flight',flight.id]"> more details</button>
-            <button class="btn btn-secondary btn-block mt-2" [routerLink]="['/book',flight.id]"> Book Now </button>
+
+            <button class="btn btn-primary  btn-block mt-2"  routerLink="/mainapi"> more details</button>
+
 
           </div>
         </a>
@@ -122,3 +119,231 @@
     </div>
   </section>
 </div>
+
+
+
+<section id="why-us" class="why-us">
+  <div class="container" >
+
+    <div class="section-title">
+      <h2>Why choose Our Company <span>Flyin</span></h2>
+      <p>Flight, Flight is better than any other superpower because, it can transport you faster than any other superpower.
+         There are two different types of flight, the most common one is buoyant flight. Buoyant flight is a human constructed creation which is lighter than air like a blimp.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="box">
+          <span>01</span>
+          <h4>cheapest prices</h4>
+          <p>Our company is characterized by the cheapest prices  </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="box">
+          <span>02</span>
+          <h4>The best trips and places</h4>
+          <p>Our company is characterized by the best offers and trips </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="box">
+          <span>03</span>
+          <h4> Best Services</h4>
+          <p>Our company is characterized by the best services for all our customers</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Whu Us Section -->
+<br>
+<br>
+<!-- ======= Specials Section ======= -->
+<section id="specials" class="specials">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Check our <span>Instructions</span></h2>
+      <p>You have to read these instructions for your own good.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Older people</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Our Children</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">meals and food </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Free children's activities bag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Priority boarding</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Older people</h3>
+                <p class="fst-italic">The following example meal plan has been designed for a typical elderly individual.</p>
+                <p> It's nutritionally balanced to suit an elderly person who is moderately active and in reasonable health in order to maintain their weight. Obviously this is based on an average elderly person, and there may be significant variation in activity, mobility, weight, appetitive, etc, so like all plans, it is merely an example and needs to be adapted to suit an individual's own lifestyle, daily routine and nutritional requirements. Use this to give you an idea of what are healthy nutritious foods to include, but don't forget to vary your food choices.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="../../../assets/24.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Our Children</h3>
+                <p class="fst-italic">there are some children with physical challenges who weigh more than 40 lbs. and need the support and security of a CRS or device so they can travel safely on an airplane.</p>
+                <p>Airlines must allow a child who is under the age of 18 to use an approved CRS that is properly labeled, appropriate for the child's weight, and as long as the child is properly secured in the CRS. Many companies manufacture CRSs approved for use on aircraft that are specifically designed for larger children who are physically challenged</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="../../../assets/22.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>meals and food</h3>
+                <p class="fst-italic">Serves light meals for passengers </p>
+                <p>An airline meal, airline food, or in-flight meal is a meal served to passengers on board a commercial airliner. These meals are prepared by specialist airline catering services and normally served to passengers using an airline service trolley.
+                    These meals vary widely in quality and quantity across different airline companies and classes of travel. They range from a simple snack or beverage in short-haul economy class to a seven-course gourmet meal in a first class long-haul flight. The types of food offered also vary widely from country to country, and often incorporate elements of local cuisine</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="../../../assets/23.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-4">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Free children's activities bag</h3>
+                <p class="fst-italic">Food and snacks that children will love</p>
+                <p>Our children's meals keep little tummies happy on board. Look out for Scooby-Doo and the Looney Tunes crew on our meal boxes and snack bags.
+                  Please order your child's meal at least 24 hours before your flight.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="../../../assets/images/44.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-5">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Priority boarding</h3>
+                <p class="fst-italic">Families must go to the plane first</p>
+                <p>We do everything we can to make flying with children as comfortable as possible. Some of our airport lounges have dedicated family rooms, and we’ll invite families to board first to give you extra time to get settled. Travelling with a push chair? Check it in or let us collect it from you just before you board.
+
+                  Remember to reserve your seats to guarantee that you sit together.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="../../../assets/images/333.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Specials Section -->
+<!-- ======= Gallery Section ======= -->
+<br>
+
+<section id="gallery" class="gallery">
+  <div class="container-fluid">
+
+    <div class="section-title">
+      <h2>Some photos from our <span>Journey</span></h2>
+      <p>Some pictures of the places our company goes to</p>
+    </div>
+
+    <div class="row g-0">
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/21.jpg" class="gallery-lightbox">
+            <img src="../../../assets/21.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/20.jpg" class="gallery-lightbox">
+            <img src="../../../assets/20.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/55.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/55.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/01.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/01.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/england.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/england.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/sharm.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/sharm.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/germany.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/germany.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+          <a href="../../../assets/images/dammam.jpg" class="gallery-lightbox">
+            <img src="../../../assets/images/dammam.jpg" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
